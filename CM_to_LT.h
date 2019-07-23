@@ -12,6 +12,7 @@
 #include <XBee900APIParser.h>
 #include <mbed.h>
 #include <rtos.h>
+#include <time.h>
 #include <string> 
 using namespace std;
 
@@ -22,8 +23,7 @@ private:
 
 public:
   CM_to_LT(PinName tx, PinName rx);
-  int broadcastTelemetry(float lat, float lng, float alt, float gndSpeed, float vertVel, int heading);
-  int broadcastHello();
+  int broadcastTelemetry(time_t t, float lat, float lng, float alt, float gndSpeed, float vertVel, int heading);
 };
 
 #endif
